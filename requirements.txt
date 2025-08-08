@@ -1,0 +1,97 @@
+# Enterprise AppData Deep Clean Suite Dependencies
+# Core dependencies required for basic functionality
+
+# YAML configuration support
+PyYAML>=6.0
+
+# System and process utilities
+psutil>=5.9.0
+
+# Windows Management Instrumentation
+WMI>=1.5.1
+
+# HTTP client for API integration
+requests>=2.28.0
+
+# Optional dependencies for enhanced functionality
+
+# Windows Remote Management (optional)
+# pywinrm>=0.4.3
+
+# SSH client for remote deployment (optional)
+# paramiko>=2.11.0
+
+# Encryption support (optional)
+# cryptography>=3.4.8
+
+# Additional enterprise features (optional)
+
+# JSON schema validation
+# jsonschema>=4.17.0
+
+# Excel file support for reports
+# openpyxl>=3.0.10
+
+# Database support for logging
+# sqlite3  # Built-in with Python
+
+# Network utilities
+# netaddr>=0.8.0
+
+# Configuration management integrations (optional)
+
+# Ansible integration
+# ansible>=2.13.0
+
+# Puppet integration
+# pypuppetdb>=3.0.0
+
+# Chef integration
+# chef-api>=0.5.0
+
+# SaltStack integration
+# salt>=3000.0
+
+# Monitoring and metrics (optional)
+
+# Prometheus metrics
+# prometheus-client>=0.14.0
+
+# InfluxDB client
+# influxdb-client>=1.36.0
+
+# Logging enhancements (optional)
+
+# Structured logging
+# structlog>=22.1.0
+
+# Log rotation
+# logrotate>=0.0.1
+
+# Security and compliance (optional)
+
+# Certificate handling
+# certifi>=2022.12.7
+
+# Hash functions
+# hashlib  # Built-in with Python
+
+# Development dependencies (optional)
+
+# Testing framework
+# pytest>=7.0.0
+
+# Code coverage
+# coverage>=6.5.0
+
+# Code formatting
+# black>=22.0.0
+
+# Linting
+# flake8>=5.0.0
+
+# Type checking
+# mypy>=0.991
+
+# Documentation
+# sphinx>=5.0.0 

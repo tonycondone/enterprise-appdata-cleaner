@@ -1,0 +1,188 @@
+# Enterprise AppData Deep Clean Suite Configuration
+# This is an example configuration file for enterprise deployment
+
+enterprise:
+  organization: "Acme Corporation"
+  environment: "production"  # production, staging, development
+  compliance_level: "strict"  # standard, strict, relaxed
+  security_framework: "nist"  # nist, iso27001, sox, pci
+  audit_required: true
+
+software_patterns:
+  protected_enterprise:
+    - "microsoft"
+    - "office"
+    - "teams"
+    - "outlook"
+    - "onedrive"
+    - "adobe"
+    - "acrobat"
+    - "creative"
+    - "photoshop"
+    - "zoom"
+    - "webex"
+    - "slack"
+    - "skype"
+    - "vmware"
+    - "citrix"
+    - "rdp"
+    - "antivirus"
+    - "endpoint"
+    - "defender"
+    - "symantec"
+    - "mcafee"
+    - "tableau"
+    - "powerbi"
+    - "splunk"
+    - "datadog"
+    - "jenkins"
+    - "git"
+    - "docker"
+    - "kubernetes"
+    - "chrome"
+    - "firefox"
+    - "edge"
+    - "java"
+    - "python"
+    - "oracle"
+    - "sap"
+    - "salesforce"
+    - "workday"
+    - "servicenow"
+
+  development_tools:
+    - "vscode"
+    - "visualstudio"
+    - "intellij"
+    - "eclipse"
+    - "nodejs"
+    - "npm"
+    - "gradle"
+    - "maven"
+    - "postman"
+    - "insomnia"
+    - "wireshark"
+    - "git"
+    - "svn"
+    - "jenkins"
+    - "docker"
+    - "kubernetes"
+
+  safe_to_clean:
+    - "temp"
+    - "cache"
+    - "logs"
+    - "backup"
+    - "old"
+    - "deprecated"
+    - "unused"
+    - "tmp"
+    - "downloads"
+    - "recycle.bin"
+
+security:
+  require_elevation: true
+  audit_all_operations: true
+  encrypt_reports: false
+  send_to_siem: true
+  siem_endpoint: "https://siem.company.com/api/events"
+  max_file_age_days: 90
+  min_file_size_mb: 1
+  create_backup: true
+  create_restore_point: true
+  secure_deletion_passes: 3
+
+deployment:
+  batch_size: 50
+  parallel_threads: 4
+  timeout_minutes: 30
+  retry_attempts: 3
+  target_hosts:
+    - "host1.company.com"
+    - "host2.company.com"
+    - "host3.company.com"
+  ssh_key_path: "/path/to/ssh/private/key"
+  winrm_config:
+    username: "admin"
+    password: null  # Use certificate or key-based auth
+    server: "https://winrm.company.com:5986/wsman"
+    transport: "https"
+    verify_ssl: true
+
+config_management:
+  type: "ansible"  # ansible, puppet, chef, saltstack
+  server: "ansible.company.com"
+  api_key: null  # Load from environment variable
+  playbook_path: "/opt/ansible/playbooks/appdata_cleanup.yml"
+  inventory_path: "/opt/ansible/inventory/hosts"
+  vault_password_file: "/opt/ansible/.vault_pass"
+
+reporting:
+  formats: ["json", "yaml", "csv"]
+  destinations: ["local", "network", "api"]
+  webhook_url: "https://webhook.company.com/cleanup-events"
+  email_notifications: true
+  email_recipients:
+    - "admin@company.com"
+    - "security@company.com"
+  report_retention_days: 365
+
+# Advanced settings
+advanced:
+  performance_monitoring: true
+  detailed_logging: true
+  log_retention_days: 90
+  max_file_size_gb: 10
+  exclude_patterns:
+    - "*.pfx"
+    - "*.p12"
+    - "*.crt"
+    - "*.key"
+    - "*.reg"
+    - "*.pol"
+  include_patterns:
+    - "*.tmp"
+    - "*.log"
+    - "*.cache"
+    - "*.bak"
+    - "*.old"
+
+# Compliance settings
+compliance:
+  nist:
+    retention_period_days: 365
+    sensitive_data_patterns:
+      - "password"
+      - "secret"
+      - "key"
+      - "token"
+      - "credential"
+    require_secure_deletion: true
+  
+  iso27001:
+    information_classification: true
+    audit_trail_required: true
+    data_retention_policy: "strict"
+  
+  sox:
+    financial_data_retention_years: 7
+    audit_log_retention_years: 7
+    require_approval: true
+  
+  pci:
+    cardholder_data_protection: true
+    secure_deletion_required: true
+    audit_frequency: "monthly"
+
+# Monitoring and alerting
+monitoring:
+  enabled: true
+  metrics_endpoint: "https://metrics.company.com/api/v1/write"
+  alert_thresholds:
+    files_deleted_percent: 50
+    disk_space_freed_gb: 10
+    cleanup_duration_minutes: 60
+  notifications:
+    slack_webhook: "https://hooks.slack.com/services/xxx/yyy/zzz"
+    teams_webhook: "https://company.webhook.office.com/webhookb2/xxx"
+    email_alerts: true 
